@@ -138,7 +138,7 @@ $(document).ready(function () {
     return false;
   });
 
-  //Smooth scroll and pageup
+  //Smooth scroll and pageup.
 
   $(window).scroll(function () {
     if ($(this).scrollTop() > 1600) {
@@ -146,5 +146,9 @@ $(document).ready(function () {
     } else {
       $(".pageup").fadeOut();
     }
+  });
+  $("a[href^='#up']").click(function () {
+    const _href = $(this).attr("href");
+    $("html, body").animate({ scrollTop: $(_href).offset().top + "px" });
   });
 });
